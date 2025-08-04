@@ -9,13 +9,13 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logout(); // Clear token from context and localStorage
-        navigate('/auth'); // Redirect to login page
+        navigate('/login'); // Redirect to login page
     };
 
     return (
         <nav style={{ backgroundColor: '#333', padding: '15px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', gap: '20px' }}>
-                <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1em' }}>Dashboard</Link>
+                <Link to="/dashboard" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1em' }}>Dashboard</Link>
                 {token && ( // Show My Sessions only if logged in
                     <Link to="/my-sessions" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1em' }}>My Sessions</Link>
                 )}
@@ -26,7 +26,7 @@ const Navbar = () => {
                         Logout
                     </button>
                 ) : (
-                    <Link to="/auth" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1em', padding: '8px 15px', border: '1px solid white', borderRadius: '4px' }}>
+                    <Link to="/login" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1em', padding: '8px 15px', border: '1px solid white', borderRadius: '4px' }}>
                         Login / Register
                     </Link>
                 )}
